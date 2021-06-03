@@ -1,0 +1,66 @@
+Core RISC OS free fonts
+-----------------------
+
+This is a collection of fonts from the operating system RISC OS,
+originally produced by Acorn Computers.
+
+It contains fonts that are metric compatible with the Postscript Level 1
+core fonts/PDF core fonts. It also contains several other miscellaneous
+fonts.
+
+Please note, I am not a font expert and there may well have been
+mistakes made during the conversion process. However I hope they may be
+useful for people and could be developed further.
+
+Fonts are (c) RISC OS Developments Ltd and are released under the terms
+of the Apache License 2.0. Please see file LICENCE for more details.
+
+Font conversion by Peter Howkins. June 2021.
+
+Font Descriptions
+-----------------
+
+Level 1 Core Fonts
+
+- Corpus - Courier
+  Medium, Bold
+
+- Homerton - Helvetica
+  Medium, Bold
+
+- Trinity - Times New Roman
+  Medium, Medium Oblique, Bold, Bold Oblique
+
+- Selwyn - Zapf Dingbats
+
+- Sidney - Symbol
+
+Additional Fonts
+
+ - NewHall - New Century Schoolbook
+   Medium, Medium Italic, Bold, Bold Italic
+
+ - Sassoon
+   Primary, Primary Bold
+   - Warning the font current has the wrong encoding due to a segfault
+     in acorn2sfd with the Base0 encoding.
+
+ - System - An outline version of RISC OS's bitmap 'System' Font
+   Fixed, Medium
+
+
+Conversion Process
+------------------
+
+The fonts are converted using Fontforge's 'acorn2sfd'. They were then
+post processed to remove broken winding rules, and broken hinting.
+The scripts used to generate these fonts are located in the Tools
+directory.
+
+Four oblique fonts (Corpus Medium Oblique, Corpus Bold Oblique, Homerton
+Medium Oblique, Homerton Bold Oblique) could not be automatically
+converted with acorn2sfd as they are in a different font format that
+it did not understand.
+
+Sassoon Primary and Sassoon Primary Bold currently have the wrong font
+encoding due to a segfault with acorn2sfd when using the Base0 encoding.

@@ -1,0 +1,18 @@
+#!/usr/bin/fontforge
+Open($1)
+
+# Fix the winding rule issue with font plotting (filled in 'o' 'e' 'B' etc)
+SelectAll()
+CorrectDirection()
+
+# Without this, some of the hinting in Homerton Bold for example looks terrible!
+ClearHints()
+
+# Add in the copyright string
+SetFontNames("","","","","(c) RISC OS Developments Ltd, released under Apache License 2.0","1");
+
+# Stuff has changed for the better, save changes to the sfd
+Save()
+
+# Make a nice shiney otf to actually use :)
+Generate($1:r + ".otf")

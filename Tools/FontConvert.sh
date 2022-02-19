@@ -103,6 +103,7 @@ rm -rf ../tmp
 ../Tools/fontmunge.pe Selwyn.sfd
 ../Tools/fontmunge.pe Sidney.sfd
 ../Tools/fontmunge.pe Trinity.Bold.Italic.sfd
+../Tools/Trinity.Bold.pe Trinity.Bold.sfd
 ../Tools/fontmunge.pe Trinity.Bold.sfd
 ../Tools/fontmunge.pe Trinity.Medium.Italic.sfd
 ../Tools/fontmunge.pe Trinity.Medium.sfd

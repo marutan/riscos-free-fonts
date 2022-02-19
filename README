@@ -66,3 +66,6 @@ generation scripts recreate this transform assuming a skew of 12 degrees.
 
 Sassoon Primary and Sassoon Primary Bold currently have the wrong font
 encoding due to a segfault with acorn2sfd when using the Base0 encoding.
+
+Some of the glyphs in Trinity Bold are malformed, causing too much space
+above the rendered font, so have been removed from the generated .sfd file.

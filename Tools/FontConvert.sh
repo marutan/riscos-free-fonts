@@ -9,6 +9,13 @@
 # fontforge-nox
 
 
+dofontimage() {
+	sfdname="$1"
+	pngname=`basename "$sfdname" .sfd`.png
+
+	fontimage -o "$pngname" "$sfdname"
+}
+
 cd ..
 
 mkdir -p Fonts
@@ -47,14 +54,22 @@ cd ../..
 # Covert fonts to sfd format
 cd ../Fonts
 
+cp -f ../tmp/ROMFonts/Fonts/Corpus/Bold/Outlines0 ../tmp/ROMFonts/Fonts/Corpus/Bold/Oblique
+acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Bold/Oblique/
+sed "s/Corpus.Bold/Corpus.Bold.Oblique/" Corpus.Bold.sfd > Corpus.Bold.Oblique.sfd
 acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Bold/
-#acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Bold/Oblique/ Generates Error!
+cp -f ../tmp/ROMFonts/Fonts/Corpus/Medium/Outlines0 ../tmp/ROMFonts/Fonts/Corpus/Medium/Oblique
+acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Medium/Oblique/
+sed "s/Corpus.Medium/Corpus.Medium.Oblique/" Corpus.Medium.sfd > Corpus.Medium.Oblique.sfd
 acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Medium/
-#acorn2sfd ../tmp/ROMFonts/Fonts/Corpus/Medium/Oblique/ Generates Error!
+cp -f ../tmp/ROMFonts/Fonts/Homerton/Bold/Outlines0 ../tmp/ROMFonts/Fonts/Homerton/Bold/Oblique
+acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Bold/Oblique/
+sed "s/Homerton.Bold/Homerton.Bold.Oblique/" Homerton.Bold.sfd > Homerton.Bold.Oblique.sfd
 acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Bold/
-#acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Bold/Oblique/ Generates Error!
+cp -f ../tmp/ROMFonts/Fonts/Homerton/Medium/Outlines0 ../tmp/ROMFonts/Fonts/Homerton/Medium/Oblique
+acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Medium/Oblique/
+sed "s/Homerton.Medium/Homerton.Medium.Oblique/" Homerton.Medium.sfd > Homerton.Medium.Oblique.sfd
 acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Medium/
-#acorn2sfd ../tmp/ROMFonts/Fonts/Homerton/Medium/Oblique/ Generates Error!
 acorn2sfd ../tmp/ROMFonts/Fonts/Selwyn/
 acorn2sfd ../tmp/ROMFonts/Fonts/Sidney/
 acorn2sfd ../tmp/ROMFonts/Fonts/Trinity/Bold/
@@ -78,9 +93,13 @@ rm -rf ../tmp
 
 # Update fonts to correct their drawing direction and save out .otf versions of all fonts
 ../Tools/fontmunge.pe Corpus.Bold.sfd
+../Tools/fontmunge.pe Corpus.Bold.Oblique.sfd
 ../Tools/fontmunge.pe Corpus.Medium.sfd
+../Tools/fontmunge.pe Corpus.Medium.Oblique.sfd
 ../Tools/fontmunge.pe Homerton.Bold.sfd
+../Tools/fontmunge.pe Homerton.Bold.Oblique.sfd
 ../Tools/fontmunge.pe Homerton.Medium.sfd
+../Tools/fontmunge.pe Homerton.Medium.Oblique.sfd
 ../Tools/fontmunge.pe Selwyn.sfd
 ../Tools/fontmunge.pe Sidney.sfd
 ../Tools/fontmunge.pe Trinity.Bold.Italic.sfd
@@ -100,25 +119,25 @@ rm -rf ../tmp
 
 
 # Create preview images of the fonts
-fontimage Corpus.Bold.sfd
-fontimage Corpus.Medium.sfd
-fontimage Homerton.Bold.sfd
-fontimage Homerton.Medium.sfd
-fontimage Selwyn.sfd
-fontimage Sidney.sfd
-fontimage Trinity.Bold.Italic.sfd
-fontimage Trinity.Bold.sfd
-fontimage Trinity.Medium.Italic.sfd
-fontimage Trinity.Medium.sfd
+dofontimage Corpus.Bold.sfd
+dofontimage Corpus.Medium.sfd
+dofontimage Homerton.Bold.sfd
+dofontimage Homerton.Medium.sfd
+dofontimage Selwyn.sfd
+dofontimage Sidney.sfd
+dofontimage Trinity.Bold.Italic.sfd
+dofontimage Trinity.Bold.sfd
+dofontimage Trinity.Medium.Italic.sfd
+dofontimage Trinity.Medium.sfd
 
-fontimage NewHall.Bold.sfd
-fontimage NewHall.Bold.Italic.sfd
-fontimage NewHall.Medium.sfd
-fontimage NewHall.Medium.Italic.sfd
-fontimage Sassoon.Primary.sfd
-fontimage Sassoon.Primary.Bold.sfd
-fontimage System.Fixed.sfd
-fontimage System.Medium.sfd
+dofontimage NewHall.Bold.sfd
+dofontimage NewHall.Bold.Italic.sfd
+dofontimage NewHall.Medium.sfd
+dofontimage NewHall.Medium.Italic.sfd
+dofontimage Sassoon.Primary.sfd
+dofontimage Sassoon.Primary.Bold.sfd
+dofontimage System.Fixed.sfd
+dofontimage System.Medium.sfd
 
 
 

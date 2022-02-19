@@ -18,6 +18,21 @@ ClearHints()
 # Add in the copyright string
 SetFontNames(fontname,family,fullname,"","(c) RISC OS Developments Ltd, released under Apache License 2.0","1");
 
+# Set the StyleMap to help Windows decide which fonts are in a family
+if (Strstr($1, "Bold.Italic") != -1)
+	SetOS2Value("StyleMap", 0x21);
+elseif (Strstr($1, "Bold.Oblique") != -1)
+	SetOS2Value("StyleMap", 0x21);
+elseif (Strstr($1, "Bold") != -1)
+	SetOS2Value("StyleMap", 0x20);
+elseif (Strstr($1, "Italic") != -1)
+	SetOS2Value("StyleMap", 0x01);
+elseif (Strstr($1, "Oblique") != -1)
+	SetOS2Value("StyleMap", 0x01);
+else
+	SetOS2Value("StyleMap", 0x40);
+endif
+
 # Stuff has changed for the better, save changes to the sfd
 Save()
 

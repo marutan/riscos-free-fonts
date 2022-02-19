@@ -1,5 +1,12 @@
 #!/usr/bin/fontforge
 Open($1)
+#
+# Generate some acceptable TTF names for this font
+names = StrSplit($fontname, ".");
+fullname = StrJoin(names, " ");
+subfamily = StrSplit(Strsub($fontname, Strstr($fontname, ".") + 1), ".")
+family = names[0];
+fontname = family + "-" + StrJoin(subfamily, "");
 
 # Fix the winding rule issue with font plotting (filled in 'o' 'e' 'B' etc)
 SelectAll()
@@ -9,7 +16,7 @@ CorrectDirection()
 ClearHints()
 
 # Add in the copyright string
-SetFontNames("","","","","(c) RISC OS Developments Ltd, released under Apache License 2.0","1");
+SetFontNames(fontname,family,fullname,"","(c) RISC OS Developments Ltd, released under Apache License 2.0","1");
 
 # Stuff has changed for the better, save changes to the sfd
 Save()

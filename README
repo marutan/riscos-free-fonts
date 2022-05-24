@@ -23,10 +23,10 @@ Font Descriptions
 Level 1 Core Fonts
 
 - Corpus - Courier
-  Medium, Bold
+  Medium, Medium Oblique, Bold, Bold Oblique
 
 - Homerton - Helvetica
-  Medium, Bold
+  Medium, Medium Oblique, Bold, Bold Oblique
 
 - Trinity - Times New Roman
   Medium, Medium Oblique, Bold, Bold Oblique
@@ -60,7 +60,12 @@ directory.
 Four oblique fonts (Corpus Medium Oblique, Corpus Bold Oblique, Homerton
 Medium Oblique, Homerton Bold Oblique) could not be automatically
 converted with acorn2sfd as they are in a different font format that
-it did not understand.
+it did not understand.  The outlines file contains matrix transform values
+that describe how the Oblique fonts are generated from the base fonts.  The
+generation scripts recreate this transform assuming a skew of 12 degrees.
 
 Sassoon Primary and Sassoon Primary Bold currently have the wrong font
 encoding due to a segfault with acorn2sfd when using the Base0 encoding.
+
+Some of the glyphs in Trinity Bold are malformed, causing too much space
+above the rendered font, so have been removed from the generated .sfd file.

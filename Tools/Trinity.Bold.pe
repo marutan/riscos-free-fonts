@@ -1,0 +1,28 @@
+#!/usr/bin/fontforge
+
+Open($1);
+
+# These characters are malformed in the .sfd file, causing text in this font
+# to have too much space above it.  For now, just delete these characters
+#
+# The problem is as follows:
+#   hbar references h and a transformed Eth
+#   h is defined by a spline set
+#   Eth is defined by a spline set of a line, and a reference to D
+#   D is defined by a spline set
+#
+# RISC OS throws away the reference to D from Eth, and just uses Eth's spline
+# set of the line.  FontForge does not throw away the refernce to D
+#
+# The other characters below have the same problem, but with different
+# reference characters.
+Select("dcroat");
+Cut();
+Select("hbar");
+Cut();
+Select("Uring");
+Cut();
+Select("Atilde");
+Cut();
+
+Save();

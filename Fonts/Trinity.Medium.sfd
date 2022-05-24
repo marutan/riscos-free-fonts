@@ -1,6 +1,6 @@
 SplineFontDB: 3.2
-FontName: Trinity.Medium
-FullName: Trinity.Medium
+FontName: Trinity-Medium
+FullName: Trinity Medium 
 FamilyName: Trinity
 Weight: Medium
 Copyright: (c) RISC OS Developments Ltd, released under Apache License 2.0
@@ -14,16 +14,23 @@ InvalidEm: 0
 LayerCount: 2
 Layer: 0 0 "Back" 1
 Layer: 1 0 "Fore" 0
+StyleMap: 0x0040
+FSType: 0
 OS2Version: 0
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
-CreationTime: 1622737881
-ModificationTime: 1622737882
+CreationTime: 1653360705
+ModificationTime: 1653360706
+PfmFamily: 17
+TTFWeight: 500
+TTFWidth: 5
+LineGap: 45
+VLineGap: 45
 OS2TypoAscent: 0
 OS2TypoAOffset: 1
 OS2TypoDescent: 0
 OS2TypoDOffset: 1
-OS2TypoLinegap: 0
+OS2TypoLinegap: 45
 OS2WinAscent: 0
 OS2WinAOffset: 1
 OS2WinDescent: 0
@@ -32,7 +39,6 @@ HheadAscent: 0
 HheadAOffset: 1
 HheadDescent: 0
 HheadDOffset: 1
-OS2Vendor: 'PfEd'
 Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0" { "'kern' Horizontal Kerning in Latin lookup 0 subtable"  } ['kern' ('latn' <'dflt' > ) ]
 DEI: 91125
 Encoding: Custom

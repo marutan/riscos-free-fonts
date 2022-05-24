@@ -121,9 +121,13 @@ rm -rf ../tmp
 
 # Create preview images of the fonts
 dofontimage Corpus.Bold.sfd
+dofontimage Corpus.Bold.Oblique.sfd
 dofontimage Corpus.Medium.sfd
+dofontimage Corpus.Medium.Oblique.sfd
 dofontimage Homerton.Bold.sfd
+dofontimage Homerton.Bold.Oblique.sfd
 dofontimage Homerton.Medium.sfd
+dofontimage Homerton.Medium.Oblique.sfd
 dofontimage Selwyn.sfd
 dofontimage Sidney.sfd
 dofontimage Trinity.Bold.Italic.sfd
